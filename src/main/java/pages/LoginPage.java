@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import utils.log;
+
 public class LoginPage {
 private WebDriver driver;
 	
@@ -34,6 +36,7 @@ private WebDriver driver;
 		password.sendKeys(Password);
 	}
 	public void clickLoginbtn() {
+		log.info("Clicking on loginbutton..");
 		loginbtn.click();
 	}
 	
