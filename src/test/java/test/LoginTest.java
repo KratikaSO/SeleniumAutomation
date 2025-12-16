@@ -44,6 +44,7 @@ public class LoginTest extends BaseTest {
 		HomeP.clickLogin();
 		log.info("Adding credential...");
 		
+		test.info("Enteromg credentials....");
 		LoginP.enterEmail(email);
 		LoginP.enterPassword(password);
 		
@@ -53,10 +54,11 @@ public class LoginTest extends BaseTest {
 		test.info("Clicking loginbutton..");
 		LoginP.clickLoginbtn();
 		
-		String loggedinText=driver.findElement(By.xpath("//a[text()=' Logged in as Kratika']")).getText();
-		System.out.println(loggedinText);
+		Boolean logout=driver.findElement(By.xpath("//a[@href='/logout']")).isDisplayed();
+		//System.out.println(loggedinText);
 		log.info("Verifying logged in text...");
-		Assert.assertEquals(loggedinText, "Logged in as Kratika");
+		Assert.assertTrue(logout);
+		//Assert.assertEquals(loggedinText, "Logged in as Kratika");
 		test.pass("test success");
 	
 	}

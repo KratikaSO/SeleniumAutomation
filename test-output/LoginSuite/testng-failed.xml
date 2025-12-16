@@ -2,13 +2,14 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [LoginSuite]">
   <test thread-count="5" name="LoginTests(failed)">
+    <parameter name="url" value="https://automationexercise.com/"/>
     <classes>
       <class name="test.LoginTest">
         <methods>
           <include name="setUp"/>
           <include name="tearDown"/>
           <include name="setupReport"/>
-          <include name="testLoginWithValidCredential"/>
+          <include name="testLoginWithValidCredential" invocation-numbers="1 2"/>
           <include name="tearDownReport"/>
         </methods>
       </class> <!-- test.LoginTest -->

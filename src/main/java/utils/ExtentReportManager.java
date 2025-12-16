@@ -16,12 +16,13 @@ import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 public class ExtentReportManager {
 private static ExtentReports extent;
 private static ExtentTest test;
+public static String reportpath;
 
 public static ExtentReports getReportInstance() {
 	
 	if (extent==null) {
 		String timestamp=new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss").format(new Date());
-		String reportpath="reports/ExtentReport_"+timestamp+".html";
+		 reportpath="reports/ExtentReport_"+timestamp+".html";
 		
 		ExtentSparkReporter reporter=new ExtentSparkReporter(reportpath);
 		reporter.config().setDocumentTitle("Automation Test Report");	

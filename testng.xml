@@ -1,5 +1,6 @@
 <suite name="LoginSuite"> 
     <test name="LoginTests"> 
+    <parameter name="url" value="https://automationexercise.com/"/>
         <classes>
 			<class name="test.LoginTest" />
 		</classes>

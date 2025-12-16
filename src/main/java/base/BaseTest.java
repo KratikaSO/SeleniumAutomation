@@ -10,11 +10,13 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Parameters;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
 
+import utils.EmailUtils;
 import utils.ExtentReportManager;
 import utils.log;
 
@@ -31,12 +33,13 @@ public class BaseTest {
 	
 	
 	@BeforeMethod
-	public void setUp() {
+	@Parameters({"url"})
+	public void setUp(String url) {
 		log.info("Starting webdriver...");
 		driver=new ChromeDriver();
 		driver.manage().window().maximize();
 		log.info("Navigating to URL...");
-		driver.get("https://automationexercise.com/");
+		driver.get(url);
 		
 	}
     @AfterMethod
@@ -56,6 +59,8 @@ public class BaseTest {
     @AfterSuite
     public void tearDownReport() {
 		extent.flush();
+		String reportPath=ExtentReportManager.reportpath;
+		EmailUtils.sendReport(reportPath);
 	}
     
     

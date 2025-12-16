@@ -8,7 +8,7 @@
           <include name="setUp"/>
           <include name="tearDown"/>
           <include name="setupReport"/>
-          <include name="testLoginWithValidCredential" invocation-numbers="0 1 2"/>
+          <include name="testLoginWithValidCredential" invocation-numbers="1 2"/>
           <include name="tearDownReport"/>
         </methods>
       </class> <!-- test.LoginTest -->
