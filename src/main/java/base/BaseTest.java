@@ -33,13 +33,14 @@ public class BaseTest {
 	
 	
 	@BeforeMethod
-	@Parameters({"url"})
+	//@Parameters({"url"})
 	public void setUp(String url) {
 		log.info("Starting webdriver...");
 		driver=new ChromeDriver();
 		driver.manage().window().maximize();
 		log.info("Navigating to URL...");
-		driver.get(url);
+		//driver.get(url);
+		driver.get("https://automationexercise.com");
 		
 	}
     @AfterMethod
