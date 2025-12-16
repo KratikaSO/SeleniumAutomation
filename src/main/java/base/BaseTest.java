@@ -34,7 +34,7 @@ public class BaseTest {
 	
 	@BeforeMethod
 	//@Parameters({"url"})
-	public void setUp(String url) {
+	public void setUp() {
 		log.info("Starting webdriver...");
 		driver=new ChromeDriver();
 		driver.manage().window().maximize();
